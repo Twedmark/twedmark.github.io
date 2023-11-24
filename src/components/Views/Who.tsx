@@ -1,5 +1,5 @@
 import React from "react";
-import { Sections } from "../style";
+import { Sections } from "./style";
 import Card from "../Card";
 
 const Who = () => {

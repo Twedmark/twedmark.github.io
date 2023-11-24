@@ -6,7 +6,7 @@ import Contact from "./components/Views/Contact";
 import styled from "styled-components";
 import ParticleBackground from "./components/ParticleBackground";
 
-const Container = styled.div`
+const ViewContainer = styled.div`
   height: 100vh;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
@@ -22,12 +22,12 @@ function App() {
     <div>
       <ParticleBackground />
 
-      <Container>
+      <ViewContainer>
         <Hero />
         <Who />
         <Portfolio />
         <Contact />
-      </Container>
+      </ViewContainer>
     </div>
   );
 }
