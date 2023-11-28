@@ -5,6 +5,7 @@ import { loadSlim } from "tsparticles-slim";
 import particlesConfig from "./config/particles-config";
 
 import type { Container, Engine } from "tsparticles-engine";
+// import type { Container, Engine } from "tsparticles-engine";
 
 export default function ParticleBackground() {
   const particlesInit = useCallback(async (engine: Engine) => {
