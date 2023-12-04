@@ -1,13 +1,14 @@
 import React from "react";
-import Hero from "./components/Views/Hero";
-import Who from "./components/Views/Who";
-import Portfolio from "./components/Views/Portfolio";
-import Contact from "./components/Views/Contact";
+import Hero from "./Views/Hero";
+import Who from "./Views/Who";
+import Portfolio from "./Views/Portfolio";
+import Contact from "./Views/Contact";
 import styled from "styled-components";
-import ParticleBackground from "./components/ParticleBackground";
+// import ParticleBackground from "./components/ParticleBackground";
 
 const ViewContainer = styled.div`
   height: 100vh;
+  -webkit-scroll-snap-type: y mandatory;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overflow-y: auto;
@@ -20,11 +21,11 @@ const ViewContainer = styled.div`
 function App() {
   return (
     <div>
-      <ParticleBackground />
+      {/* <ParticleBackground /> */}
 
       <ViewContainer>
         <Hero />
-        <Who />
+        {/* <Who /> */}
         <Portfolio />
         <Contact />
       </ViewContainer>
