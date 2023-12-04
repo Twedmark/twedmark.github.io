@@ -4,7 +4,6 @@ import Who from "./Views/Who";
 import Portfolio from "./Views/Portfolio";
 import Contact from "./Views/Contact";
 import styled from "styled-components";
-// import ParticleBackground from "./components/ParticleBackground";
 
 const ViewContainer = styled.div`
   height: 100vh;
@@ -21,8 +20,6 @@ const ViewContainer = styled.div`
 function App() {
   return (
     <div>
-      {/* <ParticleBackground /> */}
-
       <ViewContainer>
         <Hero />
         {/* <Who /> */}
