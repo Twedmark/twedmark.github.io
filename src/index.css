@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 body {
-  background: #fafafa;
-
   margin: 0;
   padding: 0;
   font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system,
@@ -13,11 +11,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --color-primary: rgb(4, 8, 15);
-  --color-secondary: rgb(156, 160, 168);
-}
+  background: #dddcca;
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-} */
+  --color-dark-text: #4c5a2a;
+  --color-light-text: rgb(47, 47, 47);
+
+  color: var(--color-dark-text);
+  /* --color-green: rgb(13, 46, 45); */
+
+  --color-green: #adb866;
+  --color-dark-green: #4c5a2a;
+
+  --color-yellow: rgb(240, 171, 68);
+  --color-red: rgb(196, 67, 85);
+  --color-tan: rgb(244, 210, 153);
+
+  --color-dark: rgb(4, 8, 15);
+  --color-gray: rgb(156, 160, 168);
+}

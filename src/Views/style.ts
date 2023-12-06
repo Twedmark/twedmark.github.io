@@ -6,4 +6,31 @@ export const Sections = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+`;
+
+export const HeadShot = styled.div`
+  position: absolute;
+  top: 1vh;
+  left: 1vw;
+  width: 250px;
+  height: 250px;
+
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: 0 0 10px;
+  z-index: 3;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;

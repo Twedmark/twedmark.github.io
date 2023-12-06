@@ -8,16 +8,28 @@ interface Props {
 }
 
 const Section = styled.div<Props>`
+  position: relative;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   align-items: center;
-  height: 80%;
-  aspect-ratio: 1/1.41;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+
+  width: 45%;
+  max-height: 80%;
+  aspect-ratio: 1/1.2;
+
+  background-color: var(--color-green);
   background: ${(Props) => Props?.background || ""};
   ${({ styles }) => ({ ...styles })}
+
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    aspect-ratio: unset;
+  }
 `;
 
 const Card: React.FC<Props> = ({ children, background, styles }) => {

@@ -12,7 +12,7 @@ const HeaderStyle = styled.h1<Props>`
   text-align: center;
   font-size: 1.7rem;
   align-self: center;
-  color: ${({ color }) => color || ""};
+  color: ${({ color }) => color || "var(--color-dark-text)"};
 `;
 
 const Header: React.FC<Props> = ({ children, hr, color }) => {

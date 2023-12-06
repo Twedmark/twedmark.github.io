@@ -13,17 +13,18 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
-  background-color: transparent;
-  border: 2px solid var(--color-primary);
+  background-color: var(--color-yellow);
   border-radius: 5px;
-  padding: 0.25rem 0%.5;
+  padding: 0.25rem 0.5;
   font-size: 1.2rem;
-  color: var(--color-primary);
+  color: var(--color-red);
+
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+
   &:hover {
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
+    background-color: var(--color-red);
+    color: var(--color-yellow);
   }
 `;
 

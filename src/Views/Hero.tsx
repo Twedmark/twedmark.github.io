@@ -1,51 +1,32 @@
 import Header from "../components/Header";
 import Icons from "../components/Icons";
-
-import { Sections } from "./style";
+import Axel from "../photos/Axel.jpg";
+import { Sections, HeadShot } from "./style";
 
 import styled from "styled-components";
 
-const HeadShot = styled.div`
-  position: absolute;
-  top: -9vw;
-  left: -9vw;
-  width: 18vw;
-  aspect-ratio: 1/1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100%;
-  overflow: hidden;
-  box-shadow: 0 0 10px;
-  z-index: 3;
+const boxSize = {
+  width: 80,
+  height: 45,
+  transform: 14,
+};
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+const TextBox = styled.div`
+  position: relative;
+  margin-top: auto;
+  padding: 0;
+  gap: 0.5rem;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  height: ${boxSize.height}vh;
+  width: ${boxSize.width}vw;
+
+  p {
+    font-size: 1rem;
+    font-weight: normal;
   }
-
-  background: white;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const BackgroundBox = styled.div`
-  position: absolute;
-  top: -50%;
-  left: 3%;
-  width: 110%;
-  aspect-ratio: 2.4/1;
-  border: 0;
-  background: #0c3b2e;
-  z-index: -1;
-  transform: rotate(5deg);
 `;
 
 const HeroCard = styled.div`
@@ -54,57 +35,97 @@ const HeroCard = styled.div`
   flex-direction: column;
 
   width: 70vw;
+  height: 90vh;
   padding: 1rem;
   aspect-ratio: 2.4/1;
   border-bottom: 2px solid var(--color-primary);
 `;
 
-const TextBox = styled.div`
-  margin-left: auto;
+const BackgroundBox = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(${boxSize.transform}deg);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-green);
+  height: ${boxSize.height - 20}vh;
+  width: ${boxSize.width * 3}vw;
+
+  z-index: -2;
+  overflow: hidden;
+`;
+
+const CounterRotate = styled.div`
+  position: absolute;
+  transform: rotate(-${boxSize.transform}deg);
+  height: ${boxSize.height}vh;
+  width: ${boxSize.width}vw;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  gap: 0.5rem;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 0 1rem;
-  z-index: 2;
-  p {
-    font-size: 1rem;
-    font-weight: normal;
-  }
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+`;
+
+const TextBehind = styled.div`
+  position: absolute;
+  height: ${boxSize.height}vh;
+  width: ${boxSize.width}vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: -3;
 `;
 
 const Hero = () => {
   return (
     <Sections>
+      <HeadShot>
+        <img src={Axel} alt="It's me!" />
+      </HeadShot>
       <HeroCard>
-        <BackgroundBox />
-        <HeadShot>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/en/a/a5/Donald_Duck_angry_transparent_background.png"
-            alt="kalle"
-          />
-        </HeadShot>
         <TextBox>
-          <Header color="white">Hej! Här är jag</Header>
-          <div style={{ alignSelf: "Center", color: "white" }}>
-            <p>
-              Axel Twedmark, 33 år gammal, frontend-utvecklare från göteborg.{" "}
-            </p>
-            <p>
-              Studerat på Jensen Yrkeshögskola i Göteborg där jag gick frontend
-              inriktinge websäkerhet.
-            </p>
-            <p>
-              Nogrann och lättlärd, förkärlet till Javascript samt strävar att
-              utveklas till fullstack!
-            </p>
-          </div>
+          <BackgroundBox>
+            <CounterRotate>
+              <Header>Hej! Här är jag</Header>
+              <div style={{ alignSelf: "Center" }}>
+                <p>
+                  Axel Twedmark, 33 år gammal, frontend-utvecklare från
+                  göteborg.
+                </p>
+                <p>
+                  Studerat på Jensen Yrkeshögskola i Göteborg där jag gick
+                  frontend inriktinge websäkerhet.
+                </p>
+                <p>
+                  Nogrann och lättlärd, förkärlet till Javascript samt strävar
+                  att utveklas till fullstack!
+                </p>
+              </div>
+            </CounterRotate>
+          </BackgroundBox>
+          <TextBehind>
+            <Header color="black">Hej! Här är jag</Header>
+            <div style={{ alignSelf: "Center", color: "black" }}>
+              <p>
+                Axel Twedmark, 33 år gammal, frontend-utvecklare från göteborg.
+              </p>
+              <p>
+                Studerat på Jensen Yrkeshögskola i Göteborg där jag gick
+                frontend inriktinge websäkerhet.
+              </p>
+              <p>
+                Nogrann och lättlärd, förkärlet till Javascript samt strävar att
+                utveklas till fullstack!
+              </p>
+            </div>
+          </TextBehind>
         </TextBox>
-        <Icons iconText="Detta kan jag" hero />
+        <Icons hero />
       </HeroCard>
     </Sections>
   );
