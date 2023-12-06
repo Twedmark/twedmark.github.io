@@ -26,6 +26,7 @@ const Section = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin-top: auto;
   width: 100%;
 `;
 
@@ -48,7 +49,8 @@ const TextArea = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 100%;
+
+  height: 100%;
   padding: 0 2rem;
 
   @media (max-width: 768px) {
@@ -78,7 +80,7 @@ const Portfolio = () => {
           <Icons iconSize={30} javascript typescript next axios tailWind />
         </TextArea>
       </ProjectCard>
-      <ProjectCard>
+      {/* <ProjectCard>
         <CarouselContainer>
           <Carousel />
         </CarouselContainer>
@@ -96,7 +98,7 @@ const Portfolio = () => {
           </Section>
           <Icons iconSize={30} javascript typescript next axios tailWind />
         </TextArea>
-      </ProjectCard>
+      </ProjectCard> */}
     </Sections>
   );
 };

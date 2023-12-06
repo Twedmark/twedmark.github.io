@@ -110,7 +110,7 @@ const Hero = () => {
           </BackgroundBox>
           <TextBehind>
             <Header color="black">Hej! Här är jag</Header>
-            <div style={{ alignSelf: "Center", color: "black" }}>
+            <div style={{ alignSelf: "Center" }}>
               <p>
                 Axel Twedmark, 33 år gammal, frontend-utvecklare från göteborg.
               </p>

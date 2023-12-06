@@ -33,12 +33,9 @@ interface IconsProps {
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   margin-top: auto;
   margin-bottom: 1rem;
   padding-top: 1rem;
-  align-items: flex-start;
   width: 100%;
   p {
     font-size: 0.75rem;
@@ -211,7 +208,7 @@ const Icons: React.FC<IconsProps> = ({
               className="IconSize"
               style={{ color: "rgb(0, 157, 255)" }}
             />
-            <p>Tailwind CSS</p>
+            <p>Tailwind</p>
           </div>
         )}
         {/* <div>

@@ -13,8 +13,8 @@ const Section = styled.div<Props>`
   flex-direction: column;
   align-items: center;
 
-  width: 45%;
-  max-height: 80%;
+  width: 40%;
+  max-height: 60%;
   aspect-ratio: 1/1.2;
 
   background-color: var(--color-green);
@@ -22,9 +22,9 @@ const Section = styled.div<Props>`
   ${({ styles }) => ({ ...styles })}
 
   transition: all 0.2s ease-in-out;
-  &:hover {
+  /* &:hover {
     transform: scale(1.02);
-  }
+  } */
 
   @media (max-width: 768px) {
     width: 90%;
