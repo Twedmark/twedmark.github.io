@@ -64,9 +64,10 @@ const Grid = styled.div<IconsProps>`
     font-weight: bold;
   }
   @media (max-width: 768px) {
-    gap: 0.5rem;
+    gap: 0.25rem;
     justify-content: center;
     align-items: center;
+
     .IconSize {
       font-size: ${(props) => (props.iconSize ? props.iconSize * 0.75 : 30)}px;
     }

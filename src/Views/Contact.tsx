@@ -1,88 +1,68 @@
-import React from "react";
+import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
-
 import { Sections } from "./style";
 import { GrDocumentDownload } from "react-icons/gr";
 
 import styled from "styled-components";
+import LinkButton from "../components/LinkButton";
 
-const ContactMe = styled.p`
-  position: relative;
+const CVContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
   flex-direction: row;
   margin: 0;
   padding: 0;
-  width: 8rem;
-  height: 1.5rem;
-  overflow: hidden;
-`;
 
-const TextOne = styled.p`
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  opacity: 1;
-  transform: translateX(0%);
-  background-color: transparent;
+  cursor: pointer;
 
-  transition: all 0.3s ease-in-out;
-
-  ${ContactMe}:hover & {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-`;
-
-const TextTwo = styled.p`
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  transform: translateX(-100%);
-  background-color: transparent;
-
-  transition: all 0.3s ease-in-out;
-
-  ${ContactMe}:hover & {
-    opacity: 1;
-    transform: translateX(0%);
+  p {
+    margin: 0;
+    padding: 0;
   }
 `;
 
 const Contact = () => {
+  const [text, setText] = useState("Maila mig!");
+
   const download = () => {
     window.open(
       "https://drive.google.com/uc?export=download&id=1aUKDP8VrInLcBhBv-rbmRXB8ETLtb0gx",
       "_blank"
     );
   };
-
   const CopyMail = () => {
-    const copy = "Axel.Twedmark@gmail.com";
-    navigator.clipboard.writeText(copy);
+    // navigator.clipboard.writeText("Axel.Twedmark@gmail.com");
+    navigator.clipboard
+      .writeText("Axel.Twedmark@gmail.com")
+      .then(() => {
+        alert("successfully copied");
+      })
+      .catch(() => {
+        alert("something went wrong");
+      });
+
+    setText("Mail kopierad!");
+
+    setTimeout(() => {
+      setText("Maila mig!");
+    }, 2000);
   };
 
   return (
     <Sections>
       <ProjectCard>
-        <p>Vill du veta mer eller kontakta mig?</p>
-
-        <section>
-          <GrDocumentDownload onClick={download} size={40} />
+        <CVContainer onClick={download}>
+          <GrDocumentDownload size={40} />
           <p>Mitt CV</p>
-        </section>
+        </CVContainer>
+        <p>
+          Är du på jakt efter en passionerad frontend-utvecklare som är redo att
+          ta sig an nya utmaningar? Skicka ett meddelande nedan!
+        </p>
 
-        <ContactMe onClick={CopyMail}>
-          <TextOne className="one">Kontakta mig</TextOne>
-          <TextTwo className="two">Kopiera mail</TextTwo>
-        </ContactMe>
+        <LinkButton action={CopyMail}>{text}</LinkButton>
       </ProjectCard>
     </Sections>
   );

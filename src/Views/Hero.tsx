@@ -13,6 +13,10 @@ const boxSize = {
 
 const TextBox = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   margin-top: auto;
   padding: 0;
   gap: 0.5rem;
@@ -39,6 +43,12 @@ const HeroCard = styled.div`
   padding: 1rem;
   aspect-ratio: 2.4/1;
   border-bottom: 2px solid var(--color-primary);
+
+  @media (max-width: 768px) {
+    width: 90vw;
+    height: 90vh;
+    aspect-ratio: unset;
+  }
 `;
 
 const BackgroundBox = styled.div`
@@ -55,7 +65,7 @@ const BackgroundBox = styled.div`
   width: ${boxSize.width * 3}vw;
 
   z-index: -2;
-  overflow: hidden;
+  /* overflow: hidden; */
 `;
 
 const CounterRotate = styled.div`
@@ -67,21 +77,38 @@ const CounterRotate = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  /* overflow: hidden; */
 `;
 
-const TextBehind = styled.div`
-  position: absolute;
-  height: ${boxSize.height}vh;
-  width: ${boxSize.width}vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: -3;
-`;
+// const TextBehind = styled.div`
+//   position: absolute;
+//   height: ${boxSize.height}vh;
+//   width: ${boxSize.width}vw;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: -3;
+// `;
 
 const Hero = () => {
+  const AboutMe = (
+    <>
+      <Header>Hej! Här är jag</Header>
+      <div style={{ alignSelf: "Center" }}>
+        <p>Axel Twedmark, 33 år gammal, frontend-utvecklare från göteborg.</p>
+        <p>
+          Studerat på Jensen Yrkeshögskola i Göteborg där jag gick frontend
+          inriktinge websäkerhet.
+        </p>
+        <p>
+          Nogrann och lättlärd, förkärlet till Javascript samt strävar att
+          utveklas till fullstack!
+        </p>
+      </div>
+    </>
+  );
+
   return (
     <Sections>
       <HeadShot>
@@ -90,40 +117,9 @@ const Hero = () => {
       <HeroCard>
         <TextBox>
           <BackgroundBox>
-            <CounterRotate>
-              <Header>Hej! Här är jag</Header>
-              <div style={{ alignSelf: "Center" }}>
-                <p>
-                  Axel Twedmark, 33 år gammal, frontend-utvecklare från
-                  göteborg.
-                </p>
-                <p>
-                  Studerat på Jensen Yrkeshögskola i Göteborg där jag gick
-                  frontend inriktinge websäkerhet.
-                </p>
-                <p>
-                  Nogrann och lättlärd, förkärlet till Javascript samt strävar
-                  att utveklas till fullstack!
-                </p>
-              </div>
-            </CounterRotate>
+            <CounterRotate>{AboutMe}</CounterRotate>
           </BackgroundBox>
-          <TextBehind>
-            <Header color="black">Hej! Här är jag</Header>
-            <div style={{ alignSelf: "Center" }}>
-              <p>
-                Axel Twedmark, 33 år gammal, frontend-utvecklare från göteborg.
-              </p>
-              <p>
-                Studerat på Jensen Yrkeshögskola i Göteborg där jag gick
-                frontend inriktinge websäkerhet.
-              </p>
-              <p>
-                Nogrann och lättlärd, förkärlet till Javascript samt strävar att
-                utveklas till fullstack!
-              </p>
-            </div>
-          </TextBehind>
+          {/* <TextBehind>{AboutMe}</TextBehind> */}
         </TextBox>
         <Icons hero />
       </HeroCard>

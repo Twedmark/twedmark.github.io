@@ -13,21 +13,19 @@ const Section = styled.div<Props>`
   flex-direction: column;
   align-items: center;
 
-  width: 40%;
+  max-width: 40%;
   max-height: 60%;
   aspect-ratio: 1/1.2;
+  padding: 0 1rem 1rem 1rem;
 
   background-color: var(--color-green);
   background: ${(Props) => Props?.background || ""};
   ${({ styles }) => ({ ...styles })}
 
   transition: all 0.2s ease-in-out;
-  /* &:hover {
-    transform: scale(1.02);
-  } */
 
   @media (max-width: 768px) {
-    width: 90%;
+    max-width: 85%;
     aspect-ratio: unset;
   }
 `;

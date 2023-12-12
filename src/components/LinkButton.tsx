@@ -3,12 +3,15 @@ import styled from "styled-components";
 import { SiGithub } from "react-icons/si";
 
 interface LinkButtonProps {
-  link: string;
+  link?: string;
+  action?: () => void;
+  text?: string;
   github?: boolean;
   livePage?: boolean;
+  children?: React.ReactNode;
 }
 
-const Test = styled.button`
+const Container = styled.button`
   position: relative;
   display: block;
   width: 35%;
@@ -104,7 +107,13 @@ const Test = styled.button`
 //   border-radius: 5px;
 // `;
 
-const LinkButton: React.FC<LinkButtonProps> = ({ link, github, livePage }) => {
+const LinkButton: React.FC<LinkButtonProps> = ({
+  action,
+  link,
+  github,
+  livePage,
+  children,
+}) => {
   return (
     // <Button onClick={() => window.open(link, "_blank")}>
     //   {livePage && (
@@ -121,21 +130,23 @@ const LinkButton: React.FC<LinkButtonProps> = ({ link, github, livePage }) => {
     //   )}
     // </Button>
 
-    <Test onClick={() => window.open(link, "_blank")}>
+    <Container onClick={action ? action : () => window.open(link, "_blank")}>
       <a>
         {github ? (
           <>
             <SiGithub /> <p>Github</p>
           </>
-        ) : (
+        ) : livePage ? (
           <>
             <SiGithub />
-            <p>Live</p>{" "}
+            <p>Live</p>
           </>
+        ) : (
+          <p>{children}</p>
         )}
       </a>
       <div />
-    </Test>
+    </Container>
   );
 };
 

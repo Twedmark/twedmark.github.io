@@ -12,8 +12,8 @@ export const Sections = styled.div`
 
 export const HeadShot = styled.div`
   position: absolute;
-  top: 1vh;
-  left: 1vw;
+  top: 1.5%;
+  left: 1.5%;
   width: 250px;
   height: 250px;
 
@@ -31,6 +31,16 @@ export const HeadShot = styled.div`
   }
 
   @media (max-width: 768px) {
-    display: none;
+    top: 2%;
+    left: 2%;
+    width: 150px;
+    height: 150px;
+  }
+
+  @media (max-width: 425px) {
+    top: 1%;
+    left: 1%;
+    width: 100px;
+    height: 100px;
   }
 `;
