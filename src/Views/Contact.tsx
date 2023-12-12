@@ -37,13 +37,11 @@ const Contact = () => {
     navigator.clipboard
       .writeText("Axel.Twedmark@gmail.com")
       .then(() => {
-        alert("successfully copied");
+        setText("Mail kopierad!");
       })
       .catch(() => {
-        alert("something went wrong");
+        console.log("Något gick fel!");
       });
-
-    setText("Mail kopierad!");
 
     setTimeout(() => {
       setText("Maila mig!");
