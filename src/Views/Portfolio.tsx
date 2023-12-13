@@ -33,13 +33,13 @@ const CarouselContainer = styled.div`
   overflow: hidden;
   width: 80%;
   max-height: 100%;
-  box-shadow: 6px 8px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
   background: black;
 
   @media (max-width: 768px) {
     width: 40%;
     transform: translate(50%, -40%);
-    box-shadow: 5px 6px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.4);
   }
 `;
 

@@ -17,6 +17,7 @@ const Section = styled.div<Props>`
   max-height: 60%;
   aspect-ratio: 1/1.2;
   padding: 0 1rem 1rem 1rem;
+  text-align: justify;
 
   background-color: var(--color-green);
   background: ${(Props) => Props?.background || ""};

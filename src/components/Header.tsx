@@ -29,7 +29,7 @@ const ZIndex = styled.div`
 export const BackgroundBox = styled.div`
   position: absolute;
   bottom: 0;
-  left: 53%;
+  left: calc(50% + 0.5rem);
   transform: translateX(-50%);
 
   width: 98%;

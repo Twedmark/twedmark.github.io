@@ -14,10 +14,10 @@ const Section = styled.div<Props>`
   align-items: center;
   justify-content: space-evenly;
 
-  max-width: 80%;
-  max-height: 60%;
-  aspect-ratio: 1.2/1;
-  padding: 0 1rem 1rem 1rem;
+  max-width: 70%;
+
+  aspect-ratio: 1.414/1;
+  padding: 1rem;
 
   background-color: var(--color-green);
   background: ${(Props) => Props?.background || ""};

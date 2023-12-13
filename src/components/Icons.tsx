@@ -40,6 +40,7 @@ const Container = styled.div`
   padding-top: 1rem;
   width: 100%;
   p {
+    text-align: center;
     font-size: 0.75rem;
     font-weight: bold;
   }
@@ -223,7 +224,7 @@ const Icons: React.FC<IconsProps> = ({
               className="iconSize"
               style={{ color: "rgb(66, 133, 244)" }}
             />
-            <p>Google</p>
+            <p>Google OAuth</p>
           </div>
         )}
         {/* <div>
