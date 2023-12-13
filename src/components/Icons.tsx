@@ -12,6 +12,7 @@ import {
   SiAxios,
   SiNextdotjs,
   SiTailwindcss,
+  SiGoogle,
 } from "react-icons/si";
 
 interface IconsProps {
@@ -29,6 +30,7 @@ interface IconsProps {
   redux?: boolean;
   git?: boolean;
   tailWind?: boolean;
+  google?: boolean;
 }
 
 const Container = styled.div`
@@ -50,7 +52,7 @@ const Grid = styled.div<IconsProps>`
   justify-content: center;
   align-items: center;
   width: 100%;
-  .IconSize {
+  .iconSize {
     font-size: ${(props) => (props.iconSize ? props.iconSize : 40)}px;
   }
   div {
@@ -68,7 +70,7 @@ const Grid = styled.div<IconsProps>`
     justify-content: center;
     align-items: center;
 
-    .IconSize {
+    .iconSize {
       font-size: ${(props) => (props.iconSize ? props.iconSize * 0.75 : 30)}px;
     }
     p {
@@ -93,6 +95,7 @@ const Icons: React.FC<IconsProps> = ({
   redux,
   git,
   tailWind,
+  google,
 }) => {
   return (
     <Container>
@@ -102,7 +105,7 @@ const Icons: React.FC<IconsProps> = ({
           <div>
             <SiJavascript
               title="Javascript"
-              className="IconSize"
+              className="iconSize"
               style={{ color: "rgb(255, 255, 0)", background: "rgb(0, 0, 0)" }}
             />
             <p>Javascript</p>
@@ -112,7 +115,7 @@ const Icons: React.FC<IconsProps> = ({
           <div>
             <SiTypescript
               title="Typescript"
-              className="IconSize"
+              className="iconSize"
               style={{
                 color: "rgb(0, 122, 204)",
                 background: "rgb(255, 255, 255)",
@@ -126,7 +129,7 @@ const Icons: React.FC<IconsProps> = ({
           <div>
             <SiReact
               title="React"
-              className="IconSize"
+              className="iconSize"
               style={{ color: "rgb(0,255,255)" }}
             />
             <p>React</p>
@@ -137,7 +140,7 @@ const Icons: React.FC<IconsProps> = ({
             <SiNextdotjs
               style={{ color: "black" }}
               title="Next.js"
-              className="IconSize"
+              className="iconSize"
             />
             <p>Next.js</p>
           </div>
@@ -147,7 +150,7 @@ const Icons: React.FC<IconsProps> = ({
             <SiNodedotjs
               title="Node.js"
               style={{ color: "rgb(79, 146, 61)" }}
-              className="IconSize"
+              className="iconSize"
             />
             <p>Node.js</p>
           </div>
@@ -156,7 +159,7 @@ const Icons: React.FC<IconsProps> = ({
           <div>
             <SiStyledcomponents
               title="Styled Components"
-              className="IconSize"
+              className="iconSize"
               style={{ color: "black" }}
             />
             <p>Styled Components</p>
@@ -166,7 +169,7 @@ const Icons: React.FC<IconsProps> = ({
           <div>
             <SiMongodb
               title="MongoDB"
-              className="IconSize"
+              className="iconSize"
               style={{ color: "rgb(1, 23, 32)" }}
             />
             <p>MongoDB</p>
@@ -176,7 +179,7 @@ const Icons: React.FC<IconsProps> = ({
           <div>
             <SiAxios
               title="Axios"
-              className="IconSize"
+              className="iconSize"
               style={{ color: "rgb(82,12,215)" }}
             />
             <p>Axios</p>
@@ -186,7 +189,7 @@ const Icons: React.FC<IconsProps> = ({
           <div>
             <SiRedux
               title="Redux"
-              className="IconSize"
+              className="iconSize"
               style={{ color: "rgb(98,49,174)" }}
             />
             <p>Redux</p>
@@ -196,7 +199,7 @@ const Icons: React.FC<IconsProps> = ({
           <div>
             <SiGit
               title="Git"
-              className="IconSize"
+              className="iconSize"
               style={{ color: "rgb(223,55,38)" }}
             />
             <p>Git</p>
@@ -206,10 +209,21 @@ const Icons: React.FC<IconsProps> = ({
           <div>
             <SiTailwindcss
               title="Tailwind CSS"
-              className="IconSize"
+              className="iconSize"
               style={{ color: "rgb(0, 157, 255)" }}
             />
             <p>Tailwind</p>
+          </div>
+        )}
+
+        {google && (
+          <div>
+            <SiGoogle
+              title="Google"
+              className="iconSize"
+              style={{ color: "rgb(66, 133, 244)" }}
+            />
+            <p>Google</p>
           </div>
         )}
         {/* <div>

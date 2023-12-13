@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { SiGithub } from "react-icons/si";
+import { SiGithub, SiLinkedin } from "react-icons/si";
+import { SlGlobe } from "react-icons/sl";
 
 interface LinkButtonProps {
   link?: string;
@@ -8,14 +9,15 @@ interface LinkButtonProps {
   text?: string;
   github?: boolean;
   livePage?: boolean;
+  linkedin?: boolean;
   children?: React.ReactNode;
 }
 
 const Container = styled.button`
   position: relative;
   display: block;
-  width: 35%;
-  max-width: 150px;
+  width: 40%;
+  max-width: 160px;
   height: 40px;
   padding-bottom: 2rem;
   border: none;
@@ -37,11 +39,20 @@ const Container = styled.button`
     color: var(--color-green);
     z-index: 100;
     transform: translate3d(-6px, -6px, 0px);
-    transition: transform 0.2s ease-in-out 0s;
+    transition: transform 0.15s ease-in-out 0s;
 
     cursor: pointer;
-    &:hover {
-      transform: translate3d(2px, 2px, 0);
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        transform: translate3d(2px, 2px, 0);
+      }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
+        transform: translate3d(2px, 2px, 0);
+      }
     }
 
     display: flex;
@@ -70,76 +81,31 @@ const Container = styled.button`
   }
 `;
 
-// const Button = styled.button`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   gap: 0.25rem;
-//   background-color: var(--color-dark-green);
-//   border-radius: 5px;
-//   padding: 0.25rem 0.5;
-//   font-size: 1.2rem;
-//   color: var(--color-green);
-
-//   box-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
-
-//   border: solid 2px black;
-//   transform: translate3d(-8px, -8px, 0px) scale3d(1, 1, 1) rotateX(0deg)
-//     rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-//   transition: transform 0.2s ease-in-out 0s;
-//   z-index: 1;
-
-//   cursor: pointer;
-//   transition: all 0.2s ease-in-out;
-
-//   &:hover {
-//     transform: translate3d(-8px, -8px, 0px) scale3d(1.05, 1.05, 1) rotateX(0deg)
-//       rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-//     background-color: var(--color-light-text);
-//   }
-// `;
-
-// const Border = styled.div`
-//   z-index: 0;
-//   border: 2px solid rgb(18, 30, 39);
-//   position: absolute;
-//   color: transparent;
-//   border-radius: 5px;
-// `;
-
 const LinkButton: React.FC<LinkButtonProps> = ({
   action,
   link,
   github,
   livePage,
+  linkedin,
   children,
 }) => {
   return (
-    // <Button onClick={() => window.open(link, "_blank")}>
-    //   {livePage && (
-    //     <>
-    //       <SiGithub />
-    //       <div />
-    //     </>
-    //   )}
-    //   {github && (
-    //     <>
-    //       <SiGithub />
-    //       Github
-    //     </>
-    //   )}
-    // </Button>
-
     <Container onClick={action ? action : () => window.open(link, "_blank")}>
       <a>
         {github ? (
           <>
-            <SiGithub /> <p>Github</p>
+            <SiGithub />
+            <p>{children ? children : "Github"}</p>
           </>
         ) : livePage ? (
           <>
-            <SiGithub />
+            <SlGlobe />
             <p>Live</p>
+          </>
+        ) : linkedin ? (
+          <>
+            <SiLinkedin />
+            <p>{children ? children : "Linkedin"}</p>
           </>
         ) : (
           <p>{children}</p>

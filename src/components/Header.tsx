@@ -21,7 +21,7 @@ const HeaderStyle = styled.h1<Props>`
   color: ${({ color }) => color || "var(--color-dark-text)"};
 `;
 
-const Zindex = styled.div`
+const ZIndex = styled.div`
   position: relative;
   z-index: 2;
 `;
@@ -41,7 +41,7 @@ export const BackgroundBox = styled.div`
 const Header: React.FC<Props> = ({ children, hr, color }) => {
   return (
     <HeaderStyle color={color}>
-      <Zindex>{children}</Zindex>
+      <ZIndex>{children}</ZIndex>
       <BackgroundBox></BackgroundBox>
 
       {hr && <hr color="black" style={{ opacity: "0.4" }} />}

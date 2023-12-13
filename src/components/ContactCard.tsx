@@ -12,10 +12,11 @@ const Section = styled.div<Props>`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
 
-  max-width: 40%;
+  max-width: 80%;
   max-height: 60%;
-  aspect-ratio: 1/1.2;
+  aspect-ratio: 1.2/1;
   padding: 0 1rem 1rem 1rem;
 
   background-color: var(--color-green);
@@ -28,7 +29,7 @@ const Section = styled.div<Props>`
   }
 `;
 
-const ProjectCard: React.FC<Props> = ({ children, background, styles }) => {
+const ContactCard: React.FC<Props> = ({ children, background, styles }) => {
   return (
     <Section styles={styles} background={background}>
       {children}
@@ -36,4 +37,4 @@ const ProjectCard: React.FC<Props> = ({ children, background, styles }) => {
   );
 };
 
-export default ProjectCard;
+export default ContactCard;

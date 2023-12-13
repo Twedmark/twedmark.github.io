@@ -3,8 +3,9 @@ import styled from "styled-components";
 import nq1 from "../photos/nestquest/1.png";
 import nq2 from "../photos/nestquest/2.png";
 import nq3 from "../photos/nestquest/3.png";
+import u1 from "../photos/uptive/1.png";
 
-const NestQuestCarousel = {
+const nestQuestSlides = {
   slides: [
     {
       id: 1,
@@ -23,6 +24,21 @@ const NestQuestCarousel = {
     },
   ],
 };
+
+const uptiveSlides = {
+  slides: [
+    {
+      id: 1,
+      alt: "Uptive",
+      src: u1,
+    },
+  ],
+};
+
+interface CarouselProps {
+  nestQuest?: boolean;
+  uptive?: boolean;
+}
 
 interface Props {
   currentSlide: number;
@@ -43,15 +59,15 @@ const CarouselImage = styled.img`
   object-fit: cover;
 `;
 
-const Carousel = () => {
+const Carousel: React.FC<CarouselProps> = ({ uptive, nestQuest }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
+  let currentProject = nestQuest ? nestQuestSlides : uptiveSlides;
 
   useEffect(() => {
+    if (currentProject.slides.length < 2) return;
     const interval = setInterval(() => {
       setCurrentSlide((currentSlide) =>
-        currentSlide === NestQuestCarousel.slides.length - 1
-          ? 0
-          : currentSlide + 1
+        currentSlide === currentProject.slides.length - 1 ? 0 : currentSlide + 1
       );
     }, 6000);
     return () => clearInterval(interval);
@@ -59,9 +75,17 @@ const Carousel = () => {
 
   return (
     <CarouselSlides currentSlide={currentSlide}>
-      {NestQuestCarousel.slides.map((slide) => (
-        <CarouselImage key={slide.id} src={slide.src} alt={slide.alt} />
-      ))}
+      {currentProject.slides.length > 1 ? (
+        currentProject.slides.map((slide) => (
+          <CarouselImage key={slide.id} src={slide.src} alt={slide.alt} />
+        ))
+      ) : (
+        <CarouselImage
+          key={currentProject.slides[0].id}
+          src={currentProject.slides[0].src}
+          alt={currentProject.slides[0].alt}
+        />
+      )}
     </CarouselSlides>
   );
 };

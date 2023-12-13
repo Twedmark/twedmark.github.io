@@ -1,14 +1,14 @@
 import { useState } from "react";
-import ProjectCard from "../components/ProjectCard";
-import { Sections } from "./style";
-import { GrDocumentDownload } from "react-icons/gr";
-
 import styled from "styled-components";
+
+import { GrDocumentDownload } from "react-icons/gr";
+import { Sections } from "./style";
+
+import ContactCard from "../components/ContactCard";
 import LinkButton from "../components/LinkButton";
 
 const CVContainer = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 0.5rem;
   flex-direction: row;
@@ -25,6 +25,7 @@ const CVContainer = styled.div`
 
 const Contact = () => {
   const [text, setText] = useState("Maila mig!");
+  const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null);
 
   const download = () => {
     window.open(
@@ -32,36 +33,52 @@ const Contact = () => {
       "_blank"
     );
   };
+
   const CopyMail = () => {
-    // navigator.clipboard.writeText("Axel.Twedmark@gmail.com");
     navigator.clipboard
       .writeText("Axel.Twedmark@gmail.com")
       .then(() => {
         setText("Mail kopierad!");
       })
       .catch(() => {
+        // TODO gör en input under som man kan kopiera från
         console.log("Något gick fel!");
       });
 
-    setTimeout(() => {
+    if (timerId) {
+      clearTimeout(timerId);
+    }
+    const newTimerId = setTimeout(() => {
       setText("Maila mig!");
     }, 2000);
+    setTimerId(newTimerId);
+    return () => {
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+    };
   };
 
   return (
     <Sections>
-      <ProjectCard>
+      <ContactCard>
         <CVContainer onClick={download}>
           <GrDocumentDownload size={40} />
           <p>Mitt CV</p>
         </CVContainer>
         <p>
           Är du på jakt efter en passionerad frontend-utvecklare som är redo att
-          ta sig an nya utmaningar? Skicka ett meddelande nedan!
+          ta sig an nya utmaningar? Skicka ett meddelande!
         </p>
 
         <LinkButton action={CopyMail}>{text}</LinkButton>
-      </ProjectCard>
+        <LinkButton linkedin link="https://www.linkedin.com/in/axeltwedmark/">
+          LinkedIn
+        </LinkButton>
+        <LinkButton github link="https://github.com/Twedmark">
+          Github
+        </LinkButton>
+      </ContactCard>
     </Sections>
   );
 };
