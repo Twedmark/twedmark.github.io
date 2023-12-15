@@ -14,9 +14,9 @@ const Section = styled.div<Props>`
   align-items: center;
   justify-content: space-evenly;
 
-  max-width: 70%;
-
-  aspect-ratio: 1.414/1;
+  max-width: 60%;
+  /* aspect-ratio: 1.414/1; */
+  aspect-ratio: 1.614/1;
   padding: 1rem;
 
   background-color: var(--color-green);
@@ -24,7 +24,7 @@ const Section = styled.div<Props>`
   ${({ styles }) => ({ ...styles })}
 
   @media (max-width: 768px) {
-    max-width: 85%;
+    max-width: 90%;
     aspect-ratio: unset;
   }
 `;

@@ -76,7 +76,8 @@ const Container = styled.button`
 
   @media (max-width: 768px) {
     font-size: 0.75rem;
-    width: 30%;
+
+    max-width: 110px;
     height: 35px;
   }
 `;

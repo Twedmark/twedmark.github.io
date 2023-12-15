@@ -16,7 +16,8 @@ const Header = styled.div`
   margin-bottom: auto;
 
   p {
-    width: 60%;
+    /* width: 60%; */
+    width: 90%;
   }
 `;
 
@@ -157,9 +158,9 @@ const Contact = () => {
     <Sections>
       <ContactCard>
         <Header>
-          <ImageDiv>
+          {/* <ImageDiv>
             <img src={AxelJuno} alt="Me and a doggo" />
-          </ImageDiv>
+          </ImageDiv> */}
           <Text>
             Är du på jakt efter en passionerad frontend-utvecklare som är redo
             att ta sig an nya utmaningar? då kanske det är mig du letar efter!

@@ -79,8 +79,11 @@ const Portfolio = () => {
             <Header>Nest Quest</Header>
           </MobileDiv>
           <p>
-            En Airbnb clone, gjord med hjälp av Next.js, TypeScript och TailWind
+            En Airbnb klon, gjord med hjälp av Next.js, TypeScript och TailWind.
+            Jag ville testa den nya versionen av Next.js och se hur det
+            fungerade med App Router, men även testa tailwind.
           </p>
+
           <Section>
             <LinkButton link="https://github.com/Twedmark/nest-quest" github />
             <LinkButton
@@ -108,7 +111,6 @@ const Portfolio = () => {
             Backend integrerades med MongoDB och Azure, med data hämtad från
             företagets tidsrapporteringssystem via ett API.
           </p>
-
           <Icons
             iconSize={30}
             javascript
