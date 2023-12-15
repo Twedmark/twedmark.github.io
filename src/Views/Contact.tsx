@@ -109,6 +109,15 @@ const Text = styled.p`
   }
 `;
 
+const Texttemp = styled.p`
+  font-weight: bold;
+
+  text-align: center;
+  @media (max-width: 768px) {
+    max-width: 90%;
+  }
+`;
+
 const Links = styled.div`
   display: flex;
   justify-content: space-around;
@@ -161,10 +170,10 @@ const Contact = () => {
           {/* <ImageDiv>
             <img src={AxelJuno} alt="Me and a doggo" />
           </ImageDiv> */}
-          <Text>
+          <Texttemp>
             Är du på jakt efter en passionerad frontend-utvecklare som är redo
             att ta sig an nya utmaningar? då kanske det är mig du letar efter!
-          </Text>
+          </Texttemp>
         </Header>
         <CVSection>
           <Text>
