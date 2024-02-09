@@ -8,12 +8,31 @@ import ContactCard from "../components/ContactCard";
 import LinkButton from "../components/LinkButton";
 import AxelJuno from "../photos/AxelJuno.jpeg";
 
+const MainSection = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 75%;
+`;
+
+const SecondarySection = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`;
+
 const Header = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   margin-bottom: auto;
+  height: 30%;
 
   p {
     /* width: 60%; */
@@ -22,30 +41,25 @@ const Header = styled.div`
 `;
 
 const ImageDiv = styled.div`
-  width: 30%;
+  height: 100%;
   overflow: hidden;
 
   img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
 
     // flip the image and make it black and white
-    filter: grayscale(100%) contrast(1) brightness(90%);
+    /* filter: grayscale(100%) contrast(1) brightness(90%); */
     transform: scaleX(-1);
 
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4);
-    /// crop in on the image
-  }
-  /* 
-  @media (max-width: 768px) {
-    width: 150px;
-    height: 200px;
+    border-radius: 2%;
   }
 
-  @media (max-width: 425px) {
-    width: 100px;
-    height: 150px;
-  } */
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const CVContainer = styled.div`
@@ -86,7 +100,7 @@ const LinkText = styled.a`
   color: var(--color-primary);
   text-decoration: underline;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -109,9 +123,8 @@ const Text = styled.p`
   }
 `;
 
-const Texttemp = styled.p`
+const TextTemp = styled.p`
   font-weight: bold;
-
   text-align: center;
   @media (max-width: 768px) {
     max-width: 90%;
@@ -133,7 +146,8 @@ const Contact = () => {
 
   const download = () => {
     window.open(
-      "https://drive.google.com/uc?export=download&id=1aUKDP8VrInLcBhBv-rbmRXB8ETLtb0gx",
+      // "https://drive.google.com/uc?export=download&id=1aUKDP8VrInLcBhBv-rbmRXB8ETLtb0gx",
+      "https://drive.google.com/uc?export=download&id=1OlQy_BXQaQT8bxlZCFEAp1wBV6yPZpwm",
       "_blank"
     );
   };
@@ -166,26 +180,30 @@ const Contact = () => {
   return (
     <Sections>
       <ContactCard>
-        <Header>
-          {/* <ImageDiv>
+        <MainSection>
+          <ImageDiv>
             <img src={AxelJuno} alt="Me and a doggo" />
-          </ImageDiv> */}
-          <Texttemp>
-            Är du på jakt efter en passionerad frontend-utvecklare som är redo
-            att ta sig an nya utmaningar? då kanske det är mig du letar efter!
-          </Texttemp>
-        </Header>
-        <CVSection>
-          <Text>
-            Vill du veta mer om mig? <br />
-            ladda ner mitt CV eller skicka ett meddelande!
-          </Text>
-          <CVContainer onClick={download}>
-            <GrDocumentDownload size={24} />
-            <LinkText>Mitt CV</LinkText>
-          </CVContainer>
-        </CVSection>
-
+          </ImageDiv>
+          <SecondarySection>
+            <Header>
+              <TextTemp>
+                Är du på jakt efter en passionerad frontend-utvecklare som är
+                redo att ta sig an nya utmaningar? då kanske det är mig du letar
+                efter!
+              </TextTemp>
+            </Header>
+            <CVSection>
+              <Text>
+                Vill du veta mer om mig? <br />
+                ladda ner mitt CV eller skicka ett meddelande!
+              </Text>
+              <CVContainer onClick={download}>
+                <GrDocumentDownload size={24} />
+                <LinkText>Mitt CV</LinkText>
+              </CVContainer>
+            </CVSection>
+          </SecondarySection>
+        </MainSection>
         <Links>
           <LinkButton action={CopyMail}>{text}</LinkButton>
           <LinkButton linkedin link="https://www.linkedin.com/in/axeltwedmark/">

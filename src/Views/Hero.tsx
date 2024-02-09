@@ -20,6 +20,7 @@ const TextBox = styled.div`
   margin-top: auto;
   padding: 0;
   gap: 0.5rem;
+  max-width: 1000px;
 
   font-size: 1.2rem;
   font-weight: bold;
@@ -77,6 +78,7 @@ const CounterRotate = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 1000px;
   /* overflow: hidden; */
   gap: 1rem;
 `;
@@ -98,12 +100,12 @@ const Hero = () => {
       <Header>Hallå där!</Header>
       <div style={{ alignSelf: "Center" }}>
         <p>
-          Jag är Axel Twedmark, en erfaren frontend-utvecklare på 33 år från
-          Göteborg. jag har studerat vid Jensen Yrkeshögskola i Göteborg, där
-          jag specialiserade mig inom frontend med fokus på webbsäkerhet.
+          Jag är Axel Twedmark, en frontend-utvecklare på 33 år från Göteborg.
+          jag har studerat vid Jensen Yrkeshögskola i Göteborg, där jag
+          specialiserade mig inom frontend med fokus på webbsäkerhet.
         </p>
         <p>
-          Nogrann, lättlörd och en förkärlek för Javascript. jag strävar
+          Nogrann, lättlärd och en förkärlek för programeing. jag strävar
           ständigt efter att utvecklas som utvecklare. jag strävar att bredda
           min kompetens som fullstack-utvecklare.
         </p>

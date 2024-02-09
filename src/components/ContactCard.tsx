@@ -14,7 +14,7 @@ const Section = styled.div<Props>`
   align-items: center;
   justify-content: space-evenly;
 
-  max-width: 60%;
+  max-width: 75%;
   height: 100%;
   max-height: 50%;
   /* aspect-ratio: 1.414/1; */
