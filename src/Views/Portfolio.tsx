@@ -94,6 +94,7 @@ const Portfolio = () => {
           <Icons iconSize={30} javascript typescript next axios tailWind />
         </TextArea>
       </ProjectCard>
+
       <ProjectCard>
         <CarouselContainer>
           <Carousel uptive />
@@ -103,9 +104,9 @@ const Portfolio = () => {
             <Header>Uptive</Header>
           </MobileDiv>
           <p>
-            Under praktiken utvecklade jag och en klasskamrat ett CRM-system i
-            React med TypeScript och node.js för att möta företagets behov av
-            att överblicka konsulter och deras uppdrag.
+            Under praktiken utvecklade jag och en klasskamrat ett CRM-system med
+            hjälp av React, TypeScript och node. Detta gav företagetet en
+            lättare överblick över konsulterna och deras uppdrag.
           </p>
           <p>
             Backend integrerades med MongoDB och Azure, med data hämtad från

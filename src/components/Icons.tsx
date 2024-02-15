@@ -49,7 +49,6 @@ const Container = styled.div`
 const Grid = styled.div<IconsProps>`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
   justify-content: center;
   align-items: center;
   width: 100%;

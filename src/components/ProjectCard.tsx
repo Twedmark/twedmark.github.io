@@ -17,7 +17,9 @@ const Section = styled.div<Props>`
   max-height: 60%;
   aspect-ratio: 1/1.2;
   padding: 0 1rem 1rem 1rem;
-  text-align: justify;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  /* text-align: justify; */
 
   background-color: var(--color-green);
   background: ${(Props) => Props?.background || ""};
@@ -26,6 +28,7 @@ const Section = styled.div<Props>`
   @media (max-width: 768px) {
     max-width: 85%;
     aspect-ratio: unset;
+    font-size: 0.8rem;
   }
 `;
 

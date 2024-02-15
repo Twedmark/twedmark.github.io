@@ -11,33 +11,20 @@ import AxelJuno from "../photos/AxelJuno.jpeg";
 const MainSection = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
+  gap: 0.5rem;
   width: 100%;
-  height: 75%;
+  height: 95%;
 `;
 
 const SecondarySection = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
   height: 100%;
-`;
-
-const Header = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: auto;
-  height: 30%;
-
-  p {
-    /* width: 60%; */
-    width: 90%;
-  }
 `;
 
 const ImageDiv = styled.div`
@@ -48,16 +35,12 @@ const ImageDiv = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
-
-    // flip the image and make it black and white
-    /* filter: grayscale(100%) contrast(1) brightness(90%); */
     transform: scaleX(-1);
-
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4);
-    border-radius: 2%;
+    border-radius: 0.2rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 830px) {
     display: none;
   }
 `;
@@ -79,7 +62,7 @@ const CVContainer = styled.div`
 
   &:active {
     a {
-      color: var(--color-green);
+      color: var(--color-yellow);
     }
   }
 
@@ -100,30 +83,23 @@ const LinkText = styled.a`
   color: var(--color-primary);
   text-decoration: underline;
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 
   @media (max-width: 768px) {
     font-size: 1rem;
   }
 `;
 
-const CVSection = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-  margin-top: auto;
-`;
-
 const Text = styled.p`
   font-weight: bold;
+  text-align: center;
 
   @media (max-width: 768px) {
     max-width: 70%;
   }
 `;
 
-const TextTemp = styled.p`
+const TextTemp = styled.h3`
   font-weight: bold;
   text-align: center;
   @media (max-width: 768px) {
@@ -136,7 +112,7 @@ const Links = styled.div`
   justify-content: space-around;
   flex-direction: row;
   gap: 0.5rem;
-  margin: 1rem;
+  margin: 1rem 0;
   width: 100%;
 `;
 
@@ -146,7 +122,6 @@ const Contact = () => {
 
   const download = () => {
     window.open(
-      // "https://drive.google.com/uc?export=download&id=1aUKDP8VrInLcBhBv-rbmRXB8ETLtb0gx",
       "https://drive.google.com/uc?export=download&id=1OlQy_BXQaQT8bxlZCFEAp1wBV6yPZpwm",
       "_blank"
     );
@@ -185,34 +160,35 @@ const Contact = () => {
             <img src={AxelJuno} alt="Me and a doggo" />
           </ImageDiv>
           <SecondarySection>
-            <Header>
-              <TextTemp>
-                Är du på jakt efter en passionerad frontend-utvecklare som är
-                redo att ta sig an nya utmaningar? då kanske det är mig du letar
-                efter!
-              </TextTemp>
-            </Header>
-            <CVSection>
-              <Text>
-                Vill du veta mer om mig? <br />
-                ladda ner mitt CV eller skicka ett meddelande!
-              </Text>
-              <CVContainer onClick={download}>
-                <GrDocumentDownload size={24} />
-                <LinkText>Mitt CV</LinkText>
-              </CVContainer>
-            </CVSection>
+            <TextTemp>
+              Letar du efter en utvecklare som är redo att ta sig an nya
+              utmaningar? <br />
+              {/* Då kanske det är mig du letar efter! */}
+            </TextTemp>
+
+            <Text>
+              Vill du veta mer om mig? <br />
+              Ladda ner mitt CV eller skicka ett meddelande!
+            </Text>
+            <CVContainer onClick={download}>
+              <GrDocumentDownload size={24} />
+              <LinkText>Mitt CV</LinkText>
+            </CVContainer>
+
+            <Links>
+              <LinkButton action={CopyMail}>{text}</LinkButton>
+              <LinkButton
+                linkedin
+                link="https://www.linkedin.com/in/axeltwedmark/"
+              >
+                LinkedIn
+              </LinkButton>
+              <LinkButton github link="https://github.com/Twedmark">
+                Github
+              </LinkButton>
+            </Links>
           </SecondarySection>
         </MainSection>
-        <Links>
-          <LinkButton action={CopyMail}>{text}</LinkButton>
-          <LinkButton linkedin link="https://www.linkedin.com/in/axeltwedmark/">
-            LinkedIn
-          </LinkButton>
-          <LinkButton github link="https://github.com/Twedmark">
-            Github
-          </LinkButton>
-        </Links>
       </ContactCard>
     </Sections>
   );

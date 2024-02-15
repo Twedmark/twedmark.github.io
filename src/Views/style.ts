@@ -40,14 +40,15 @@ export const HeadShot = styled.div`
   @media (max-width: 768px) {
     top: 1%;
     left: 1%;
-    width: 160px;
-    height: 160px;
+    width: 170px;
+    height: 170px;
   }
 
   @media (max-width: 425px) {
-    top: 1%;
-    left: 1%;
-    width: 100px;
-    height: 100px;
+    top: 4%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    transform: translate(-50%, 0);
   }
 `;

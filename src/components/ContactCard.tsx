@@ -13,13 +13,12 @@ const Section = styled.div<Props>`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-
   max-width: 75%;
   height: 100%;
   max-height: 50%;
-  /* aspect-ratio: 1.414/1; */
-  /* aspect-ratio: 1.814/1; */
   padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
 
   background-color: var(--color-green);
   background: ${(Props) => Props?.background || ""};
@@ -27,7 +26,7 @@ const Section = styled.div<Props>`
 
   @media (max-width: 768px) {
     max-width: 85%;
-    max-height: 45;
+    max-height: 45%;
     aspect-ratio: unset;
   }
 `;

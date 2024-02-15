@@ -8,26 +8,21 @@ import styled from "styled-components";
 const boxSize = {
   width: 80,
   height: 45,
-  transform: 14,
+  transform: 11,
 };
 
 const TextBox = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-around;
   margin-top: auto;
-  padding: 0;
-  gap: 0.5rem;
+
   max-width: 1000px;
 
   font-size: 1.2rem;
-  font-weight: bold;
 
   height: ${boxSize.height}vh;
-  width: ${boxSize.width}vw;
-
+  /* width: ${boxSize.width}vw; */
   p {
     font-size: 1rem;
     font-weight: normal;
@@ -38,8 +33,7 @@ const HeroCard = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-
-  width: 70vw;
+  width: 75vw;
   height: 90vh;
   padding: 1rem;
   aspect-ratio: 2.4/1;
@@ -55,7 +49,7 @@ const HeroCard = styled.div`
 const BackgroundBox = styled.div`
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 25%;
   transform: translate(-50%, -50%) rotate(${boxSize.transform}deg);
 
   display: flex;
@@ -64,58 +58,32 @@ const BackgroundBox = styled.div`
   background: var(--color-green);
   height: ${boxSize.height - 20}vh;
   width: ${boxSize.width * 3}vw;
-
   z-index: -2;
-  /* overflow: hidden; */
 `;
 
-const CounterRotate = styled.div`
-  position: absolute;
-  transform: rotate(-${boxSize.transform}deg);
-  height: ${boxSize.height}vh;
-  width: ${boxSize.width}vw;
+const BioSection = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  max-width: 1000px;
-  /* overflow: hidden; */
   gap: 1rem;
-`;
 
-// const TextBehind = styled.div`
-//   position: absolute;
-//   height: ${boxSize.height}vh;
-//   width: ${boxSize.width}vw;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   z-index: -3;
-// `;
+  p {
+    font-size: 1.2rem;
+  }
+`;
 
 const Hero = () => {
   const AboutMe = (
-    <>
-      <Header>Hallå där!</Header>
-      <div style={{ alignSelf: "Center" }}>
-        <p>
-          Jag är Axel Twedmark, en frontend-utvecklare på 33 år från Göteborg.
-          jag har studerat vid Jensen Yrkeshögskola i Göteborg, där jag
-          specialiserade mig inom frontend med fokus på webbsäkerhet.
-        </p>
-        <p>
-          Nogrann, lättlärd och en förkärlek för programeing. jag strävar
-          ständigt efter att utvecklas som utvecklare. jag strävar att bredda
-          min kompetens som fullstack-utvecklare.
-        </p>
-        <p>
-          Genom att kombinera teknisk expertis med en strävan efter kontinuerlig
-          förbättring strävar jag alltid efter att leverera högkvalitativa
-          webblösningar.
-        </p>
-      </div>
-    </>
+    <BioSection>
+      {/* <p>
+        Jag är en utvecklare från Göteborg. jag har studerat frontendutvecklare
+        inriktning webbsäkerhet på Jensen yrkeshögskola.
+      </p> */}
+      <p>
+        Nogrann, lättlärd och strävar ständigt efter att utvecklas och lära mig
+        nya saker.
+      </p>
+    </BioSection>
   );
 
   return (
@@ -125,10 +93,12 @@ const Hero = () => {
       </HeadShot>
       <HeroCard>
         <TextBox>
-          <BackgroundBox>
-            <CounterRotate>{AboutMe}</CounterRotate>
-          </BackgroundBox>
-          {/* <TextBehind>{AboutMe}</TextBehind> */}
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <Header fontSize={4}>Axel Twedmark</Header>
+            <Header fontSize={2.08}>Göteborgsbaserad utvecklare</Header>
+          </div>
+          {AboutMe}
+          <BackgroundBox />
         </TextBox>
         <Icons hero />
       </HeroCard>

@@ -24,6 +24,11 @@ const Container = styled.button`
   background: transparent;
 
   a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    flex-direction: row;
     position: absolute;
     font-size: 1.2rem;
     font-weight: bold;
@@ -54,12 +59,6 @@ const Container = styled.button`
         transform: translate3d(2px, 2px, 0);
       }
     }
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.25rem;
-    flex-direction: row;
   }
 
   div {
@@ -75,7 +74,9 @@ const Container = styled.button`
   }
 
   @media (max-width: 768px) {
-    font-size: 0.75rem;
+    a {
+      font-size: 1rem;
+    }
 
     max-width: 110px;
     height: 35px;
