@@ -33,6 +33,7 @@ const HeroCard = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 75vw;
   height: 90vh;
   padding: 1rem;
