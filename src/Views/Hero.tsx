@@ -76,10 +76,6 @@ const BioSection = styled.div`
 const Hero = () => {
   const AboutMe = (
     <BioSection>
-      {/* <p>
-        Jag är en utvecklare från Göteborg. jag har studerat frontendutvecklare
-        inriktning webbsäkerhet på Jensen yrkeshögskola.
-      </p> */}
       <p>
         Nogrann, lättlärd och strävar ständigt efter att utvecklas och lära mig
         nya saker.

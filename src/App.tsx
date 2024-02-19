@@ -12,6 +12,7 @@ const ViewContainer = styled.div`
   scroll-behavior: smooth;
   overflow-y: auto;
   scrollbar-width: none;
+  scroll-padding: 10px;
 
   &::-webkit-scrollbar {
     display: none;

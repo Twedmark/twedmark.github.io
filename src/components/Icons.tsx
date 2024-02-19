@@ -71,10 +71,10 @@ const Grid = styled.div<IconsProps>`
     align-items: center;
 
     .iconSize {
-      font-size: ${(props) => (props.iconSize ? props.iconSize * 0.75 : 30)}px;
+      font-size: ${(props) => (props.iconSize ? props.iconSize * 0.8 : 30)}px;
     }
     p {
-      font-size: 0.5rem;
+      font-size: 0.6rem;
       font-weight: bold;
     }
   }

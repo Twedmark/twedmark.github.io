@@ -55,7 +55,7 @@ const CarouselSlides = styled.div<Props>`
 
 const CarouselImage = styled.img`
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
 `;
 
