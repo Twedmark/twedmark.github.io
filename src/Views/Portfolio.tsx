@@ -88,12 +88,12 @@ const WordleClone = () => {
         <Header>Wordle Clone</Header>
 
         <p>
-          En klon av de populära spelet Wordle, gjord med hjälp av React och
-          MongoDB
+          En klon av de populära spelet Wordle, gjord med hjälp av React i
+          frontenden och nodeJS och MongoDB i backenden.
         </p>
         <p>
-          Det är fortfarande under utvekcling och vill lägga in mera statistik
-          och möjligheten att spela gammla ord.
+          Den är fortfarande och jag ska lägga till bland annat mera statistik
+          och möjligheten att spela gamla ord.
         </p>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
