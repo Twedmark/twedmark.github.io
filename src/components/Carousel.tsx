@@ -48,6 +48,7 @@ const CarouselSlides = styled.div<Props>`
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: auto;
 
   transition: transform 0.5s ease-in-out;
   transform: translateX(${({ currentSlide }) => currentSlide * -100 + "%"});
