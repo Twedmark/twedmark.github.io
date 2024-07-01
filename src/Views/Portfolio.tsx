@@ -55,7 +55,7 @@ const TextArea = styled.div`
 `;
 
 const Portfolio = () => {
-  const projectData = [NestQuest, Uptive];
+  const projectData = [WordelClone, NestQuest, Uptive];
 
   return (
     <Sections length={projectData.length}>
@@ -63,6 +63,36 @@ const Portfolio = () => {
         <Project key={index} />
       ))}
     </Sections>
+  );
+};
+
+const WordelClone = () => {
+  return (
+    <ProjectCard>
+      <CarouselContainer>
+        <Carousel />
+      </CarouselContainer>
+      <TextArea>
+        <Header>Wordel Clone</Header>
+
+        <p>
+          En klon av Wordel, ett ordsp spel. Gjord med hjälp av React,
+          javascript och nodeJS. Spelet är gjort med hjälp av React och en
+          nodeJS server för att hantera data och orlistan.
+        </p>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+          <Section>
+            <LinkButton link="https://github.com/Twedmark/nest-quest" github />
+            <LinkButton
+              link="https://nest-quest-twedmark.vercel.app/"
+              livePage
+            />
+          </Section>
+          <Icons iconSize={30} javascript react node mongoDB />
+        </div>
+      </TextArea>
+    </ProjectCard>
   );
 };
 
