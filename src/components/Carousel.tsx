@@ -4,6 +4,7 @@ import nq1 from "../photos/nestquest/1.png";
 import nq2 from "../photos/nestquest/2.png";
 import nq3 from "../photos/nestquest/3.png";
 import u1 from "../photos/uptive/1.png";
+import w1 from "../photos/wordle/1.png";
 
 const nestQuestSlides = {
   slides: [
@@ -35,9 +36,20 @@ const uptiveSlides = {
   ],
 };
 
+const wordleSlides = {
+  slides: [
+    {
+      id: 1,
+      alt: "Wordle Clone",
+      src: w1,
+    },
+  ],
+};
+
 interface CarouselProps {
   nestQuest?: boolean;
   uptive?: boolean;
+  wordle?: boolean;
 }
 
 interface Props {
@@ -60,9 +72,15 @@ const CarouselImage = styled.img`
   object-fit: cover;
 `;
 
-const Carousel: React.FC<CarouselProps> = ({ uptive, nestQuest }) => {
+const Carousel: React.FC<CarouselProps> = ({ uptive, nestQuest, wordle }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
-  let currentProject = nestQuest ? nestQuestSlides : uptiveSlides;
+  let currentProject = nestQuest
+    ? nestQuestSlides
+    : uptive
+    ? uptiveSlides
+    : wordle
+    ? wordleSlides
+    : nestQuestSlides;
 
   useEffect(() => {
     if (currentProject.slides.length < 2) return;

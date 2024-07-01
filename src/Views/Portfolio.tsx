@@ -43,6 +43,10 @@ const CarouselContainer = styled.div`
   height: auto;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
   background: black;
+
+  @media (max-width: 768px) {
+    width: 60%;
+  }
 `;
 
 const TextArea = styled.div`
@@ -50,19 +54,27 @@ const TextArea = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  height: 100%;
+  height: 80%;
 `;
 
 const Portfolio = () => {
-  const projectData = [WordleClone, NestQuest, Uptive];
+  // const projectData = [WordleClone, NestQuest, Uptive];
 
   return (
-    <Sections length={projectData.length}>
-      {projectData.map((Project, index) => (
-        <Project key={index} />
-      ))}
-    </Sections>
+    <>
+      {/* <Sections length={projectData.length}>
+        {projectData.map((Project, index) => (
+          <Project key={index} />
+        ))}
+      </Sections> */}
+      <Sections length={2}>
+        <WordleClone />
+        <NestQuest />
+      </Sections>
+      <Sections length={1}>
+        <Uptive />
+      </Sections>
+    </>
   );
 };
 
@@ -70,21 +82,27 @@ const WordleClone = () => {
   return (
     <ProjectCard>
       <CarouselContainer>
-        <Carousel />
+        <Carousel wordle />
       </CarouselContainer>
       <TextArea>
         <Header>Wordle Clone</Header>
 
         <p>
-          En klon av Wordle, ett ordsp spel. Gjord med hjälp av React,
-          javascript och nodeJS. Spelet är gjort med hjälp av React och en
-          nodeJS server för att hantera data och orlistan.
+          En klon av de populära spelet Wordle, gjord med hjälp av React och
+          MongoDB
+        </p>
+        <p>
+          Det är fortfarande under utvekcling och vill lägga in mera statistik
+          och möjligheten att spela gammla ord.
         </p>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
           <Section>
-            <LinkButton link="https://github.com/Twedmark/wordleclone" github />
-            <LinkButton link="https://worldeclone.vercel.app/" livePage />
+            <LinkButton
+              link="https://github.com/Twedmark/wordle-clone"
+              github
+            />
+            <LinkButton link="https://twedmarkwordle.vercel.app/" livePage />
           </Section>
           <Icons iconSize={30} javascript react node mongoDB />
         </div>
