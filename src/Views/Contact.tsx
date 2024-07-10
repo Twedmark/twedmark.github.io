@@ -122,7 +122,7 @@ const Contact = () => {
 
   const download = () => {
     window.open(
-      "https://drive.google.com/uc?export=download&id=1OlQy_BXQaQT8bxlZCFEAp1wBV6yPZpwm",
+      "https://drive.google.com/uc?export=download&id=1TMNq2QcLaQVqNLi9EtjCkP0rNAo3iPzr",
       "_blank"
     );
   };
