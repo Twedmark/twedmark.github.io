@@ -92,8 +92,8 @@ const WordleClone = () => {
           frontenden och nodeJS och MongoDB i backenden.
         </p>
         <p>
-          Den är fortfarande och jag ska lägga till bland annat mera statistik
-          och möjligheten att spela gamla ord.
+          Projektet är under utveckling. Jag kommer lägga till bland annat mera
+          statistik och möjligheten att spela gamla ord.
         </p>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
