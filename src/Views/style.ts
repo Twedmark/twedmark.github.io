@@ -18,7 +18,9 @@ export const HeadShot = styled.div`
   height: 250px;
 
   border-radius: 100%;
+  clip-path: content-box;
   overflow: hidden;
+
   box-shadow: 0 0 10px;
   z-index: 3;
 
@@ -45,10 +47,10 @@ export const HeadShot = styled.div`
   }
 
   @media (max-width: 425px) {
-    top: 4%;
+    top: 3%;
     left: 50%;
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     transform: translate(-50%, 0);
   }
 `;
