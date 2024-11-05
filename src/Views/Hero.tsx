@@ -77,7 +77,7 @@ const Hero = () => {
   const AboutMe = (
     <BioSection>
       <p>
-        Nogrann, lättlärd och strävar ständigt efter att utvecklas och lära mig
+        Noggrann, lättlärd och strävar ständigt efter att utvecklas och lära mig
         nya saker.
       </p>
     </BioSection>
