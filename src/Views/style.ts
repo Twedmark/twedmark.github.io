@@ -16,7 +16,6 @@ export const HeadShot = styled.div`
   left: 1%;
   width: 250px;
   height: 250px;
-
   border-radius: 100%;
   clip-path: content-box;
   overflow: hidden;
