@@ -13,18 +13,9 @@ interface Props {
 const Sections = styled.div<Props>`
   scroll-snap-align: start;
   position: relative;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 2rem;
-
-  @media (max-width: 768px) {
-    scroll-snap-align: unset;
-    flex-direction: column;
-    height: ${(Props) => Props.length * 120}vh;
-  }
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 `;
 
 const Section = styled.div`
@@ -39,7 +30,6 @@ const CarouselContainer = styled.div`
   transform: translateY(-25%);
   overflow: hidden;
   width: 80%;
-
   height: auto;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
   background: black;
@@ -57,23 +47,27 @@ const TextArea = styled.div`
   height: 80%;
 `;
 
+const Description = styled.p`
+  /* font-size: 1rem; */
+`;
+
 const Portfolio = () => {
-  // const projectData = [WordleClone, NestQuest, Uptive];
+  const projectData = [WordleClone, NestQuest, Uptive];
 
   return (
     <>
-      {/* <Sections length={projectData.length}>
+      <Sections length={projectData.length}>
         {projectData.map((Project, index) => (
           <Project key={index} />
         ))}
-      </Sections> */}
-      <Sections length={2}>
+      </Sections>
+      {/* <Sections length={2}>
         <WordleClone />
         <NestQuest />
       </Sections>
       <Sections length={1}>
         <Uptive />
-      </Sections>
+      </Sections> */}
     </>
   );
 };
@@ -87,14 +81,10 @@ const WordleClone = () => {
       <TextArea>
         <Header>Wordle Clone</Header>
 
-        <p>
+        <Description>
           En klon av de populära spelet Wordle, gjord med hjälp av React i
           frontenden och nodeJS och MongoDB i backenden.
-        </p>
-        <p>
-          Projektet är under utveckling. Jag kommer lägga till bland annat mera
-          statistik och möjligheten att spela gamla ord.
-        </p>
+        </Description>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
           <Section>
@@ -121,11 +111,11 @@ const NestQuest = () => {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <Header>Nest Quest</Header>
 
-          <p>
+          <Description>
             En Airbnb klon, gjord med hjälp av Next.js, TypeScript och TailWind.
             Jag ville testa den nya versionen av Next.js och se hur det
             fungerade med App Router, men även testa tailwind.
-          </p>
+          </Description>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
@@ -152,15 +142,15 @@ const Uptive = () => {
       <TextArea>
         <Header>Uptive</Header>
 
-        <p>
+        <Description>
           Under praktiken utvecklade jag och en klasskamrat ett CRM-system med
           hjälp av React, TypeScript och node. Detta gav företagetet en lättare
           överblick över konsulterna och deras uppdrag.
-        </p>
-        <p>
+        </Description>
+        <Description>
           Backend integrerades med MongoDB och Azure, med data hämtad från
           företagets tidsrapporteringssystem via ett API.
-        </p>
+        </Description>
         <Icons
           iconSize={30}
           javascript

@@ -30,7 +30,6 @@ const Section = styled.div<Props>`
     max-width: 80vw;
     width: 100vw;
     aspect-ratio: unset;
-    font-size: 0.8rem;
   }
 `;
 
