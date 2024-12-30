@@ -7,6 +7,7 @@ import { Sections } from "./style";
 import ContactCard from "../components/ContactCard";
 import LinkButton from "../components/LinkButton";
 import AxelJuno from "../photos/AxelJuno.jpeg";
+import Axel2 from "../photos/Axel2.jpeg";
 
 const MainSection = styled.div`
   display: flex;
@@ -29,7 +30,6 @@ const SecondarySection = styled.div`
 
 const ImageDiv = styled.div`
   height: 100%;
-  overflow: hidden;
 
   img {
     width: 100%;
@@ -157,7 +157,8 @@ const Contact = () => {
       <ContactCard>
         <MainSection>
           <ImageDiv>
-            <img src={AxelJuno} alt="Me and a doggo" />
+            // <img src={AxelJuno} alt="Me and a doggo" />
+            <img src={Axel2} alt="me foraging some mushrooms" />
           </ImageDiv>
           <SecondarySection>
             <TextTemp>
