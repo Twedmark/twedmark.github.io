@@ -24,7 +24,7 @@ function App() {
     <div>
       <ViewContainer>
         <Hero />
-        <Portfolio />
+        {/* <Portfolio /> */}
         <Contact />
       </ViewContainer>
     </div>
