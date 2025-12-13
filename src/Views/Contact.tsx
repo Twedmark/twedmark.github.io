@@ -7,7 +7,7 @@ import { Sections } from "./style";
 import ContactCard from "../components/ContactCard";
 import LinkButton from "../components/LinkButton";
 import AxelJuno from "../photos/AxelJuno.jpeg";
-import Axel2 from "../photos/Axel2.jpeg";
+import Axel2 from "../photos/Axel2.jpg";
 
 const MainSection = styled.div`
   display: flex;
@@ -30,13 +30,17 @@ const SecondarySection = styled.div`
 
 const ImageDiv = styled.div`
   height: 100%;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: scaleX(-1);
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4);
+    transform: scale(1.5);
+    /* transform: scaleX(-1); */
+
     border-radius: 0.2rem;
   }
 
@@ -157,7 +161,7 @@ const Contact = () => {
       <ContactCard>
         <MainSection>
           <ImageDiv>
-            // <img src={AxelJuno} alt="Me and a doggo" />
+            {/* <img src={AxelJuno} alt="Me and a doggo" /> */}
             <img src={Axel2} alt="me foraging some mushrooms" />
           </ImageDiv>
           <SecondarySection>
